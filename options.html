@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>七牛云图床|配置项</title>
+  <style>
+    .mutated,
+    .small-mutated {
+      color: #BFB7B7;
+    }
+    .small-mutated a {
+      color: #7DBCFB;
+    }
+
+    .column {
+      max-width: 1015px;
+      margin: 20px auto 30px;
+    }
+
+    .options h3 {
+      margin: 30px 5px 10px;
+      font-size: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="column">
+    <header>
+      <h1>七牛云图床
+        <span class="mutated">配置</span>
+      </h1>
+    </header>
+    <div class="options">
+      <h3>AK</h3>
+      <p class="small-mutated">访问
+        <a href="https://portal.qiniu.com/user/key">密钥管理</a>获取 AK 和 SK</p>
+      <input type="text" name="ak" id="ak" class="option-input">
+      <h3>SK</h3>
+      <p class="small-mutated">访问
+        <a href="https://portal.qiniu.com/user/key">密钥管理</a>获取 AK 和 SK</p>
+      <input type="text" name="sk" id="sk" class="option-input">
+      <h3>Bucket</h3>
+      <p class="small-mutated">设置上传的 Bucket</p>
+      <input type="text" name="bucket" id="bucket" class="option-input">
+      <button class="save">保存</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
