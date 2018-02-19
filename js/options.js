@@ -17,7 +17,7 @@ function Options() {
           save(item, val);
         }
       })
-      $('quote').text('保存成功');
+      document.querySelector('.save').innerText('保存成功');
       window.scrollTo(0, 0);
     })
   };
