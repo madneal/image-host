@@ -3,27 +3,19 @@ function Options() {
 
   var bindUI = function () {
     fields.forEach(item => {
-      chrome.storage.sync.get(item, obj => {
-        if (obj[item]) {
-          document.querySelector('#' + item).value = obj[item];
-        }
-      })
+      document.querySelector('#' + item).value = localStorage[item] ? localStorage[item] : '';
     })
 
     document.querySelector('.save').addEventListener('click', e => {
       fields.forEach(item => {
         const val = document.querySelector('#' + item).value.trim();
         if (val) {
-          save(item, val);
+          localStorage[item] = val;
         }
       })
       document.querySelector('.save').innerText = '保存成功';
       window.scrollTo(0, 0);
     })
-  };
-
-  var save = function (name, val) {
-      chrome.storage.sync.set({[name]: val});
   };
 
   return {

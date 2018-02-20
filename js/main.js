@@ -1,11 +1,7 @@
 
 $(function() {
   const keys = ['ak', 'sk', 'bucket'];
-  let options;
-  chrome.storage.sync.get(keys, (obj) => {
-    options = obj;
-  })
-  const uptoken = genUpToken(options['ak'], options['sk'], options['bucket']);
+  const uptoken = genUpToken(localStorage['ak'], localStorage['sk'], localStorage['bucket']);
   var uploader = Qiniu.uploader({
     disable_statistics_report: false,
     runtimes: 'html5,flash,html4',
@@ -18,7 +14,7 @@ $(function() {
     chunk_size: '4mb',
     multi_selection: !(moxie.core.utils.Env.OS.toLowerCase() === "ios"),
     uptoken: uptoken,
-    domain: $('#domain').val(),
+    domain: 'https://upload.qbox.me',
     get_new_uptoken: false,
     auto_start: true,
     log_level: 5,
@@ -66,15 +62,8 @@ $(function() {
           progress.setError();
           progress.setStatus(errTip);
         }
-        // ,
-        // 'Key': function(up, file) {
-        //     var key = "";
-        //     // do something with key
-        //     return key
-        // }
     }
   });
-  //uploader.init();
   uploader.bind('BeforeUpload', function() {
     console.log("hello man, i am going to upload a file");
   });
