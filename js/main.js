@@ -1,7 +1,3 @@
-/*global Qiniu */
-/*global plupload */
-/*global FileProgress */
-/*global hljs */
 
 $(function() {
   let options = [];
