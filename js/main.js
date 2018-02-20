@@ -1,10 +1,11 @@
 
 $(function() {
-  let options = [];
-  ['ak', 'sk', 'bucket'].forEach(key => {
-    options.push(chrome.storage.sync.get(key));
+  const keys = ['ak', 'sk', 'bucket'];
+  let options;
+  chrome.storage.sync.get(keys, (obj) => {
+    options = obj;
   })
-  const uptoken = genUpToken(options[0], options[1], options[2]);
+  const uptoken = genUpToken(options['ak'], options['sk'], options['bucket']);
   var uploader = Qiniu.uploader({
     disable_statistics_report: false,
     runtimes: 'html5,flash,html4',
