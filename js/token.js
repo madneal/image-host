@@ -1,4 +1,6 @@
-function genUpToken(accessKey, secretKey, putPolicy) {
+function genUpToken(accessKey, secretKey, bucket) {
+  const putPolicy = genPolicy(bucket);
+
   //SETP 2
   var put_policy = JSON.stringify(putPolicy);
   console && console.log("put_policy = ", put_policy);
