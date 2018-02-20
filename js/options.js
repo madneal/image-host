@@ -33,7 +33,5 @@ function Options() {
   };
 }
 
-document.onload(() => {
-  var options = new Options();
-  options.init();
-})
+const options = new Options();
+options.init();
