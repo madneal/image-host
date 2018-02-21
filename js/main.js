@@ -2,6 +2,7 @@
 $(function() {
   const keys = ['ak', 'sk', 'bucket'];
   const uptoken = genUpToken(localStorage['ak'], localStorage['sk'], localStorage['bucket']);
+  const domain = localStorage['domain'];
   var uploader = Qiniu.uploader({
     disable_statistics_report: false,
     runtimes: 'html5,flash,html4',
@@ -55,6 +56,8 @@ $(function() {
       'FileUploaded': function(up, file, info) {
         // var progress = new FileProgress(file, 'fsUploadProgress');
         console.log("response:", info.response);
+        res = info.response;
+        const link = domain + res.key;
         // progress.setComplete(up, info.response);
       },
       'Error': function(up, err, errTip) {
