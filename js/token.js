@@ -23,7 +23,7 @@ function genUpToken(accessKey, secretKey, bucket) {
 function genPolicy(scope) {
   let policy = {
     scope: scope,
-    deadline: new Date() + 60000
+    deadline: (new Date()).getTime() + 3600
   }
   return policy;
 }
