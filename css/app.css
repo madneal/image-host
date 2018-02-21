@@ -12,9 +12,3 @@
   justify-content: center;
   align-items: center;
 }
-
-#uploader button {
-  position: relative;
-  left: 50%;
-  top: 50%;
-}
