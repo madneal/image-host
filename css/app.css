@@ -2,9 +2,19 @@
   width: 400px;
   height: 400px;
 }
+
 #uploader{
   width: 380px;
   height: 200px;
   margin-left: 10px;
   border: 2px dashed #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#uploader button {
+  position: relative;
+  left: 50%;
+  top: 50%;
 }
