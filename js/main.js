@@ -23,44 +23,45 @@ $(function() {
         console.log("before chunk upload:", file.name);
       },
       'FilesAdded': function(up, files) {
-        $('table').show();
-        $('#success').hide();
-        plupload.each(files, function(file) {
-          var progress = new FileProgress(file,
-            'fsUploadProgress');
-          progress.setStatus("等待...");
-          progress.bindUploadCancel(up);
-        });
+        // $('table').show();
+        // $('#success').hide();
+        // plupload.each(files, function(file) {
+        //   var progress = new FileProgress(file,
+        //     'fsUploadProgress');
+        //   progress.setStatus("等待...");
+        //   progress.bindUploadCancel(up);
+        // });
       },
       'BeforeUpload': function(up, file) {
         console.log("this is a beforeupload function from init");
-        var progress = new FileProgress(file, 'fsUploadProgress');
+        // var progress = new FileProgress(file, 'fsUploadProgress');
         var chunk_size = plupload.parseSize(this.getOption(
           'chunk_size'));
-        if (up.runtime === 'html5' && chunk_size) {
-          progress.setChunkProgess(chunk_size);
-        }
+        // if (up.runtime === 'html5' && chunk_size) {
+        //   progress.setChunkProgess(chunk_size);
+        // }
       },
       'UploadProgress': function(up, file) {
-        var progress = new FileProgress(file, 'fsUploadProgress');
-        var chunk_size = plupload.parseSize(this.getOption(
-          'chunk_size'));
-        progress.setProgress(file.percent + "%", file.speed,
-          chunk_size);
+        // var progress = new FileProgress(file, 'fsUploadProgress');
+        // var chunk_size = plupload.parseSize(this.getOption(
+        //   'chunk_size'));
+        // progress.setProgress(file.percent + "%", file.speed,
+        //   chunk_size);
       },
       'UploadComplete': function() {
-        $('#success').show();
+        // $('#success').show();
+        console.log('uploadcomplete');
       },
       'FileUploaded': function(up, file, info) {
-        var progress = new FileProgress(file, 'fsUploadProgress');
+        // var progress = new FileProgress(file, 'fsUploadProgress');
         console.log("response:", info.response);
-        progress.setComplete(up, info.response);
+        // progress.setComplete(up, info.response);
       },
       'Error': function(up, err, errTip) {
-          $('table').show();
-          var progress = new FileProgress(err.file, 'fsUploadProgress');
-          progress.setError();
-          progress.setStatus(errTip);
+          // $('table').show();
+          // var progress = new FileProgress(err.file, 'fsUploadProgress');
+          // progress.setError();
+          // progress.setStatus(errTip);
         }
     }
   });
