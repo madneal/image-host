@@ -1,5 +1,5 @@
 function Options() {
-  const fields = ['ak', 'sk', 'bucket'];
+  const fields = ['ak', 'sk', 'bucket', 'domain'];
 
   var bindUI = function () {
     fields.forEach(item => {

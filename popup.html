@@ -14,28 +14,35 @@
         <div id="uploader">
             <button id="pickfiles">选择图片</button>
         </div>
-        <div id="link-area">
-            <div class="link">
-                <h4>图片链接</h4>
-                <div class="content">
-                    <input type="text" name="link" id="link">
-                    <button class="input-action" data-action="copy" data-action-target="#link" value="">copy</button>
+        <div class="display">
+            <div class="status">
+                <img src="./icons/suc.png" alt="上传成功">
+                <div class="words"></div>
+            </div>
+            <div id="link-area">
+                <div class="link">
+                    <h4>图片链接</h4>
+                    <div class="content">
+                        <input type="text" name="link" id="link">
+                        <button class="input-action" data-action="copy" data-action-target="#link" value="">copy</button>
+                    </div>
+                </div>
+                <div class="link">
+                    <h4>MarkDown</h4>
+                    <div class="content">
+                        <input type="text" name="markdown" id="markdown">
+                        <button class="input-action" data-action="copy" data-action-target="#markdown" value="">copy</button>
+                    </div>
+                </div>
+                <div class="link">
+                    <h4>HTML</h4>
+                    <div class="content">
+                        <input type="text" name="a-link" id="a-link">
+                        <button class="input-action" data-action="copy" data-action-target="#a-link" value="">copy</button>
+                    </div>
                 </div>
             </div>
-            <div class="link">
-                <h4>MarkDown</h4>
-                <div class="content">
-                    <input type="text" name="markdown" id="markdown">
-                    <button class="input-action" data-action="copy" data-action-target="#markdown" value="">copy</button>                
-                </div>
-            </div>
-            <div class="link">
-                <h4>HTML</h4>
-                <div class="content">
-                    <input type="text" name="a-link" id="a-link">
-                    <button class="input-action" data-action="copy" data-action-target="#a-link" value="">copy</button>                
-                </div>
-            </div>
+
         </div>
     </div>
     <script type="text/javascript" src="js/jquery.js"></script>
