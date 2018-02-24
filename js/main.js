@@ -80,15 +80,12 @@ $(function() {
     e.stopPropagation();
   });
 
-
-
   $('#link-area').on('click', function(e) {
     const btn = e.target;
     const targetId = $(btn).attr('data-action-target');
     const val = $(targetId).val();
     copyToClipboard(val);
   });
-
 
   function copyToClipboard(input) {
     const el = document.createElement('textarea');
