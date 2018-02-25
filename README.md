@@ -5,7 +5,6 @@
 * 拖放本地图片上传
 * 生成三种格式的图片链接
 * 一键复制链接到剪切板
-
 ![qiniu.gif](http://ozfo4jjxb.bkt.clouddn.com/qiniu.gif)
 
 ## 安装
