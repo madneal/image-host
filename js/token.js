@@ -3,20 +3,16 @@ function genUpToken(accessKey, secretKey, bucket) {
 
   //SETP 2
   var put_policy = JSON.stringify(putPolicy);
-  console && console.log("put_policy = ", put_policy);
 
   //SETP 3
   var encoded = base64encode(utf16to8(put_policy));
-  console && console.log("encoded = ", encoded);
 
   //SETP 4
   var hash = CryptoJS.HmacSHA1(encoded, secretKey);
   var encoded_signed = hash.toString(CryptoJS.enc.Base64);
-  console && console.log("encoded_signed=", encoded_signed)
 
   //SETP 5
   var upload_token = accessKey + ":" + safe64(encoded_signed) + ":" + encoded;
-  console && console.log("upload_token=", upload_token)
   return upload_token;
 }
 

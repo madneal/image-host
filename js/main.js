@@ -1,11 +1,17 @@
 
 $(function() {
   const keys = ['ak', 'sk', 'bucket', 'domain'];
+  let isConfig = true;
+  
   keys.forEach(key => {
     if (!localStorage[key]) {
-      chrome.tabs.create({url: 'options.html'});
+      isConfig = false;
     }
   })
+
+  if (!isConfig) {
+    chrome.tabs.create({url: 'options.html'});
+  }
   const uptoken = genUpToken(localStorage['ak'], localStorage['sk'], localStorage['bucket']);
   const domain = localStorage['domain'].indexOf('http') == -1 ? 'http://' + localStorage['domain'] : localStorage['domain'];
   var uploader = Qiniu.uploader({
@@ -35,7 +41,6 @@ $(function() {
         console.log("this is a beforeupload function from init");
         var chunk_size = plupload.parseSize(this.getOption(
           'chunk_size'));
-
       },
       'UploadProgress': function(up, file) {
       },

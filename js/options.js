@@ -1,5 +1,6 @@
 function Options() {
   const fields = ['ak', 'sk', 'bucket', 'domain'];
+  let isConfig = true;
 
   var bindUI = function () {
     fields.forEach(item => {
@@ -13,8 +14,19 @@ function Options() {
           localStorage[item] = val;
         }
       })
-      document.querySelector('.save').innerText = '保存成功';
-      window.scrollTo(0, 0);
+      fields.forEach(key => {
+        if (!localStorage[key]) {
+          isConfig = false;
+        }
+      })
+      if (isConfig) {
+        document.querySelector('.save').innerText = '保存成功';
+        setTimeout(() => {
+          chrome.tabs.query({currentWindow: true, active: true}, function(tabs) {
+            chrome.tabs.remove(tabs[0].id);
+          })
+        }, 1500)
+      }
     })
   };
 
