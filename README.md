@@ -6,7 +6,7 @@
 * 生成三种格式的图片链接
 * 一键复制链接到剪切板
 
-![options](http://ozfo4jjxb.bkt.clouddn.com/七牛云.png)
+![Snipaste_2018-02-25_10-04-52.png](http://ozfo4jjxb.bkt.clouddn.com/Snipaste_2018-02-25_10-04-52.png)
 
 ![qiniu](https://user-images.githubusercontent.com/12164075/36637212-0f51287a-1a12-11e8-920a-c45f20cbf2e7.gif)
 
