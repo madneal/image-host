@@ -5,7 +5,8 @@
 * 拖放本地图片上传
 * 生成三种格式的图片链接
 * 一键复制链接到剪切板
-![qiniu.gif](http://ozfo4jjxb.bkt.clouddn.com/qiniu.gif)
+
+![qiniu](https://user-images.githubusercontent.com/12164075/36637212-0f51287a-1a12-11e8-920a-c45f20cbf2e7.gif)
 
 ## 安装
 * [商店安装](https://chrome.google.com/webstore/detail/%E4%B8%83%E7%89%9B%E4%BA%91%E5%9B%BE%E5%BA%8A/fmpbbmjlniogoldpglopponaibclkjdg?utm_source=chrome-ntp-icon)
