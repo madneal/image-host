@@ -6,6 +6,8 @@
 * 生成三种格式的图片链接
 * 一键复制链接到剪切板
 
+![qiniu.gif](http://ozfo4jjxb.bkt.clouddn.com/qiniu.gif)
+
 ## 安装
 * [商店安装](https://chrome.google.com/webstore/detail/%E4%B8%83%E7%89%9B%E4%BA%91%E5%9B%BE%E5%BA%8A/fmpbbmjlniogoldpglopponaibclkjdg?utm_source=chrome-ntp-icon)
 * 下载本项目，在 chrome://extensions 选择以开发者模式加载已解压的拓展程序。
