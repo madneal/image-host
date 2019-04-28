@@ -2,60 +2,74 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>七牛云图床|配置项</title>
-  <style>
-    .mutated,
-    .small-mutated {
-      color: #BFB7B7;
-    }
-    .small-mutated a {
-      color: #7DBCFB; 
-    }
+    <meta charset="UTF-8">
+    <title>七牛云图床|配置项</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <style>
+        .mutated,
+        .small-mutated {
+            color: #BFB7B7;
+        }
 
-    .column {
-      max-width: 1015px;
-      margin: 20px auto 30px;
-    }
+        .small-mutated a {
+            color: #7DBCFB;
+        }
 
-    .options h3 {
-      margin: 5px;
-      font-size: 15px;
-    }
+        .column {
+            max-width: 1015px;
+            margin: 20px auto 30px;
+        }
 
-    .save {
-      display: block;
-      margin-top: 5px;
-    }
-  </style>
+        .options h3 {
+            margin: 5px;
+            font-size: 15px;
+        }
+
+        .options > section {
+            margin-top: 2em;
+        }
+
+        .save {
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="column">
+<div class="column container center-block" style="width:33%">
     <header>
-      <h1>七牛云图床
-        <span class="mutated">配置</span>
-      </h1>
+        <h1>七牛云图床
+            <span class="mutated">配置</span>
+        </h1>
+        <p class="quote">请确保按照要求填写正确的内容</p>
     </header>
-    <div class="options">
-      <p class="quote">请确保按照要求填写正确的内容</p>
-      <h3>AK</h3>
-      <p class="small-mutated">访问
-        <a href="https://portal.qiniu.com/user/key" target="_blank">密钥管理</a>获取 AK 和 SK</p>
-      <input type="text" name="ak" id="ak" class="option-input">
-      <h3>SK</h3>
-      <p class="small-mutated">访问
-        <a href="https://portal.qiniu.com/user/key" target="_blank">密钥管理</a>获取 AK 和 SK</p>
-      <input type="text" name="sk" id="sk" class="option-input">
-      <h3>Bucket</h3>
-      <p class="small-mutated">设置上传的 Bucket</p>
-      <input type="text" name="bucket" id="bucket" class="option-input">
-      <h3>域名</h3>
-      <p class="small-mutated">在<a href="https://portal.qiniu.com/create" target="_blank">控制台</a>的对象存储中可以看到域名</p>
-      <input type="text" name="domain" id="domain" class="option-input">
-      <button class="save">保存</button>
-    </div>
-  </div>
+    <form class="options">
+        <div class="form-group">
+            <h4>AK</h4>
+            <label class="small-mutated">访问
+                <a href="https://portal.qiniu.com/user/key" target="_blank">密钥管理</a>获取 AK 和 SK</label>
+            <input type="text" name="ak" id="ak" class="option-input form-control">
+        </div>
+        <section>
+            <h4>SK</h4>
+            <label class="small-mutated">访问
+                <a href="https://portal.qiniu.com/user/key" target="_blank">密钥管理</a>获取 AK 和 SK</label>
+            <input type="text" name="sk" id="sk" class="option-input form-control">
+        </section>
+        <section>
+            <h4>Bucket</h4>
+            <label class="small-mutated">设置上传的 Bucket</label>
+            <input type="text" name="bucket" id="bucket" class="option-input form-control">
+        </section>
+        <section>
+            <h4>域名</h4>
+            <label class="small-mutated">在<a href="https://portal.qiniu.com/create" target="_blank">控制台</a>的对象存储中可以看到域名</label>
+            <input type="text" name="domain" id="domain" class="option-input form-control">
+        </section>
+        <button type="button" class="save btn btn-default">保存</button>
+    </form>
+</div>
 <script type="text/javascript" src="js/options.js"></script>
 </body>
 

@@ -7,12 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>七牛云图床</title>
     <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 
 <body>
     <div id="container">
         <div id="uploader">
-            <button id="pickfiles">选择图片</button>
+            <button id="pickfiles" class="btn btn-success">选择图片</button>
             <div>
                 <h3>拖放图片到这里上传图片</h3>
             </div>
@@ -23,29 +24,29 @@
                 <img src="./icons/suc.png" alt="上传成功">
                 <div class="words"></div>
             </div>
-            <div id="link-area">
-                <div class="link">
-                    <h4>图片链接</h4>
-                    <div class="content">
-                        <input type="text" name="link" id="link">
-                        <button class="input-action" data-action="copy" data-action-target="#link" value="">copy</button>
+            <form id="link-area">
+                <div class="link form-group">
+                    <label for="content">图片链接</label>
+                    <div class="content" id="content">
+                        <input type="text" class="form-control" name="link" id="link">
+                        <button type="button" class="input-action" data-action="copy" data-action-target="#link" value="">copy</button>
                     </div>
                 </div>
-                <div class="link">
-                    <h4>MarkDown</h4>
-                    <div class="content">
-                        <input type="text" name="markdown" id="markdown">
-                        <button class="input-action" data-action="copy" data-action-target="#markdown" value="">copy</button>
+                <div class="link form-group">
+                    <label for="content2">MarkDown</label>
+                    <div class="content" id="content2">
+                        <input type="text" class="form-control" name="markdown" id="markdown">
+                        <button type="button" class="input-action" data-action="copy" data-action-target="#markdown" value="">copy</button>
                     </div>
                 </div>
-                <div class="link">
-                    <h4>HTML</h4>
-                    <div class="content">
-                        <input type="text" name="a-link" id="a-link">
-                        <button class="input-action" data-action="copy" data-action-target="#a-link" value="">copy</button>
+                <div class="link form-group">
+                    <label for="content3">HTML</label>
+                    <div class="content" id="content3">
+                        <input type="text" class="form-control" name="a-link" id="a-link">
+                        <button type="button" class="input-action" data-action="copy" data-action-target="#a-link" value="">copy</button>
                     </div>
                 </div>
-            </div>
+            </form>
 
         </div>
     </div>
