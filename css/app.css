@@ -1,83 +1,86 @@
 #container {
-  width: 400px;
-  height: 400px;
+    width: 400px;
+    height: 400px;
 }
 
-#uploader{
-  width: 380px;
-  height: 200px;
-  margin-left: 10px;
-  border: 2px dashed #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+#uploader {
+    width: 380px;
+    height: 200px;
+    margin-left: 10px;
+    border: 2px dashed #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .display {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 .link-area {
-  padding: 15px;
+    padding: 15px;
 }
 
 .link {
-  display: flex;
+    display: flex;
 }
 
 .link h4 {
-  width: 50px;
+    width: 50px;
 }
 
 .link input {
-  height: 20px;
-  width: 290px;
-  margin-top: 10px;
-  margin-left: 20px;
+    width: 290px;
 }
 
 .link button.input-action {
-  visibility: hidden;
+    visibility: hidden;
+}
+
+.link > label {
+    width: 6em;
+    line-height: 34px;
+    margin: 0;
 }
 
 button.input-action {
-  position: absolute;
-  right: 7px;
-  top: 14px;
-  background-color: #DEDEDE;
-  text-transform: uppercase;
-  cursor: pointer;
-  line-height: 1;
-  font-size: 11px;
-  padding: 2px 5px;
-  border-radius: 4px;
-  text-shadow: 0 1px 1px rgba(255,255,255,.5);
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #DEDEDE;
+    text-transform: uppercase;
+    cursor: pointer;
+    line-height: 1;
+    font-size: 11px;
+    padding: 2px 5px;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, .5);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .link:hover button.input-action {
-  visibility: visible;
+    visibility: visible;
 }
 
 .link .content {
-  position: relative;
+    position: relative;
 }
 
- #link-area {
-   visibility: hidden;
- }
+#link-area {
+    margin-top: 1em;
+}
 
- .status {
-   display: none;
-   margin-top: 5px;
- }
+.status {
+    display: none;
+    margin-top: 5px;
+}
 
- .status img {
-   width: 16px;
-   height: 16px;
- }
+.status img {
+    width: 16px;
+    height: 16px;
+}
