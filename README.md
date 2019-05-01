@@ -7,10 +7,11 @@
 * 一键复制链接到剪切板
 
 ## 配置
-![Snipaste_2018-02-25_10-04-52.png](http://ozfo4jjxb.bkt.clouddn.com/Snipaste_2018-02-25_10-04-52.png)
+![](http://mzzeast.shumsg.cn/FlgkICkL-2lNw8MlDpY2lyq5T38p)
 
 ## 上传
-![qiniu](https://user-images.githubusercontent.com/12164075/36637212-0f51287a-1a12-11e8-920a-c45f20cbf2e7.gif)
+![](http://mzzeast.shumsg.cn/FjAbiKaTjbNaxTXHJoLM7s0Vj3S8)
+三种上传方式：点击、拖拽、粘贴
 
 ## 安装
 * [商店安装](https://chrome.google.com/webstore/detail/%E4%B8%83%E7%89%9B%E4%BA%91%E5%9B%BE%E5%BA%8A/fmpbbmjlniogoldpglopponaibclkjdg?utm_source=chrome-ntp-icon)
@@ -18,3 +19,4 @@
 
 ## Reference
 [七牛云 JS SDK 文档](https://developer.qiniu.com/kodo/sdk/1283/javascript)
+[WebUploader API文档](http://fex.baidu.com/webuploader/doc/index.html)
