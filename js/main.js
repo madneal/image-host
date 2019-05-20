@@ -1,5 +1,5 @@
 $(function() {
-  const keys = ['ak', 'sk', 'bucket', 'domain']
+  const keys = ['ak', 'sk', 'bucket', 'domain', 'region']
   let isConfig = true
 
   keys.forEach(key => {
@@ -23,10 +23,12 @@ $(function() {
       ? 'http://' + localStorage['domain']
       : localStorage['domain']
 
+  const serverRegion = `https://up${localStorage['region'] === '-z0' ? '' : localStorage['region']}.qiniup.com`
+
   var uploader = WebUploader.create({
     auto: true,
     swf: 'Uploader.swf',
-    server: 'https://upload.qbox.me',
+    server: serverRegion,
     pick: '#pickfiles',
     resize: false,
     dnd: '#container',

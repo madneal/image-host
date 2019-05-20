@@ -33,6 +33,14 @@
             display: block;
             margin-top: 5px;
         }
+        
+        .radio-label {
+            margin-right: 20px;
+        }
+        
+        .radio-text {
+            margin-left: 5px;
+        }
     </style>
 </head>
 
@@ -67,7 +75,31 @@
             <label class="small-mutated">在<a href="https://portal.qiniu.com/create" target="_blank">控制台</a>的对象存储中可以看到域名</label>
             <input type="text" name="domain" id="domain" class="option-input form-control">
         </section>
-        <button type="button" class="save btn btn-default">保存</button>
+        <section>
+            <h4>存储区域</h4>
+            <p class="small-mutated">存储区域和上传域名的对应关系参考<a href="https://portal.qiniu.com/create" target="_blank">开发者文档</a></p>
+            <div id="region">
+                <label class="radio-label">
+                    <input type="radio" name="region" value="-z0" checked><span class="radio-text">华东</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="region" value="-z1"><span class="radio-text">华北</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="region" value="-z2"><span class="radio-text">华南</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="region" value="-na0"><span class="radio-text">北美</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="region" value="-as0"><span class="radio-text">东南亚</span>
+                </label>
+            </div>
+        </section>
+        <section>
+            <button type="button" class="save btn btn-default">保存</button>
+        </section>
+        
     </form>
 </div>
 <script type="text/javascript" src="js/options.js"></script>
