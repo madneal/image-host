@@ -1,5 +1,5 @@
 function Options() {
-    const fields = ['ak', 'sk', 'bucket', 'domain'];
+    const fields = ['ak', 'sk', 'bucket', 'domain', 'region'];
 
     var bindUI = function () {
         //用localstorage中的值填充每个fields
@@ -11,7 +11,10 @@ function Options() {
         //监听save按钮的click事件
         document.querySelector('.save').addEventListener('click', e => {
             fields.forEach(field => {
-                const val = document.querySelector(`#${field}`).value.trim();
+                let val = document.querySelector(`#${field}`).value.trim();
+                if (field === 'region') {
+                    val = document.querySelector(`#${field} input:checked`).value.trim();
+                }
                 if (!val) {
                     chrome.notifications.create({
                         type: "basic",
