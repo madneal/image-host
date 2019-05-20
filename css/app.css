@@ -1,6 +1,8 @@
+
 #container {
   width: 400px;
   height: 400px;
+  margin: 20px auto 0 ;
 }
 
 #uploader {
