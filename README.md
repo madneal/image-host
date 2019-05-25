@@ -1,4 +1,4 @@
-# 七牛云图床
+# 七牛云图床 [![CircleCI](https://circleci.com/gh/neal1991/image-host/tree/master.svg?style=svg)](https://circleci.com/gh/neal1991/image-host/tree/master)
 
 通过七牛云云存储建立私有图床，目前功能主要包括：
 * 直接选择本地图片上传
