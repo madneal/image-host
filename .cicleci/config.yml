@@ -1,21 +1,3 @@
-workflows:
-  version: 2
-  main:
-    jobs:
-      - build:
-          filters:
-            tags:
-              only: /.*/
-      - publish:
-          requires:
-            - build
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /.*/
-
-
 version: 2
 jobs:
   build:
