@@ -1,4 +1,20 @@
-version: 2
+version: 2.1
+workflows:
+  version: 2
+  main:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /.*/
+      - publish:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /.*/
 jobs:
   build:
     docker:
@@ -6,32 +22,18 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Install Dependencies"
-          command: echo "You can also install Yarn, NPM, or anything else you need to use to build and test your extension."
-      - run:
           name: "Make Extension Production Ready"
           command: |
             jq '.version = "new-version"' manifest.json | sponge manifest.json
             jq '.browser_action.default_icon = "icon.png"' manifest.json | sponge manifest.json
       - run:
-          name: "Run Tests"
-          command: echo "Run any tests here."
-      - run:
           name: "Package Extension"
           command: git archive -o image-host.zip HEAD
-      - persist_to_workspace:
-          root: /root/project
-          paths:
-            - image-host.zip
-
-  publish:
-    docker:
-      - image: cibuilds/chrome-extension:latest
-    environment:
-      - APP_ID: fmpbbmjlniogoldpglopponaibclkjdg
-    steps:
-      - attach_workspace:
-          at: /root/workspace
       - run:
-          name: "Publish to the Google Chrome Store"
-          command: publish /root/workspace/image-host.zip
+          name: "Upload & Publish Extension to the Google Chrome Store"
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              ACCESS_TOKEN=$(curl "https://accounts.google.com/o/oauth2/token" -d "client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&refresh_token=${REFRESH_TOKEN}&grant_type=refresh_token&redirect_uri=urn:ietf:wg:oauth:2.0:oob" | jq -r .access_token)
+              curl -H "Authorization: Bearer ${ACCESS_TOKEN}" -H "x-goog-api-version: 2" -X PUT -T image-host.zip -v "https://www.googleapis.com/upload/chromewebstore/v1.1/items/${APP_ID}"
+              curl -H "Authorization: Bearer ${ACCESS_TOKEN}" -H "x-goog-api-version: 2" -H "Content-Length: 0" -X POST -v "https://www.googleapis.com/chromewebstore/v1.1/items/${APP_ID}/publish"
+            fi
