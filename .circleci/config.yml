@@ -1,20 +1,4 @@
 version: 2
-workflows:
-  version: 2
-  main:
-    jobs:
-      - build:
-          filters:
-            tags:
-              only: /.*/
-      - publish:
-          requires:
-            - build
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /.*/
 jobs:
   build:
     docker:
@@ -25,7 +9,6 @@ jobs:
           name: "Make Extension Production Ready"
           command: |
             jq '.version = "new-version"' manifest.json | sponge manifest.json
-            jq '.browser_action.default_icon = "icon.png"' manifest.json | sponge manifest.json
       - run:
           name: "Package Extension"
           command: git archive -o image-host.zip HEAD
