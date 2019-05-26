@@ -1,4 +1,20 @@
 version: 2
+workflows:
+  version: 2
+  main:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+      - publish:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^\d+\.\d+\.\d+$/
 jobs:
   build:
     docker:
@@ -7,7 +23,11 @@ jobs:
       - checkout
       - run:
           name: "Package Extension"
-          command: git archive -o image-host.zip HEAD
+          command: git archive -o image-host.zip HEAD    
+  publish:
+    docker:
+      - image: cibuilds/chrome-extension:latest
+    steps:
       - run:
           name: "Upload & Publish Extension to the Google Chrome Store"
           command: |
