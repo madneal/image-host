@@ -6,10 +6,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Make Extension Production Ready"
-          command: |
-            jq '.version = "new-version"' manifest.json | sponge manifest.json
-      - run:
           name: "Package Extension"
           command: git archive -o image-host.zip HEAD
       - run:
