@@ -21,11 +21,17 @@ jobs:
       - checkout
       - run:
           name: "Package Extension"
-          command: git archive -o image-host.zip HEAD    
+          command: git archive -o image-host.zip HEAD
+      - persist_to_workspace:
+          root: /root/project
+          paths:
+            - image-host.zip    
   publish:
     docker:
       - image: cibuilds/chrome-extension:latest
     steps:
+      - attach_workspace:
+          at: /root/project
       - run:
           name: "Upload & Publish Extension to the Google Chrome Store"
           command: |
