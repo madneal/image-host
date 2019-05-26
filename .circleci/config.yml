@@ -4,15 +4,9 @@ workflows:
   main:
     jobs:
       - build:
-          filters:
-            tags:
-              only: /^v\d+\.\d+\.\d+$/
       - publish:
           requires:
             - build
-          filters:
-            tags:
-              only: /^v\d+\.\d+\.\d+$/
 jobs:
   build:
     docker:
