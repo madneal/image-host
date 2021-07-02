@@ -3,7 +3,7 @@
   "name": "七牛云图床",
   "short_name": "七牛云图床",
   "description": "通过七牛云云存储建立你自己的私有图床",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "icons": {
     "16": "icons/image-16.png",
     "48": "icons/image-48.png",
