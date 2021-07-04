@@ -1,10 +1,17 @@
 function Options() {
-    const fields = ['ak', 'sk', 'bucket', 'domain', 'region'];
+    const radioFields = ['region'];
+    const fields = ['ak', 'sk', 'bucket', 'domain', ...radioFields]
 
     var bindUI = function () {
         //用localstorage中的值填充每个fields
         fields.forEach(field => {
             const ls = localStorage.getItem(field)
+            if (radioFields.includes(field)) {
+                const inputs = document.querySelectorAll(`#${field} input`);
+                for (const input of inputs) {
+                    input.checked = input.value === ls;
+                }
+            }
             document.querySelector(`#${field}`).value = ls ? ls : '';
         });
 
@@ -12,7 +19,7 @@ function Options() {
         document.querySelector('.save').addEventListener('click', e => {
             fields.forEach(field => {
                 let val = document.querySelector(`#${field}`).value.trim();
-                if (field === 'region') {
+                if (radioFields.includes(field)) {
                     val = document.querySelector(`#${field} input:checked`).value.trim();
                 }
                 if (!val) {
